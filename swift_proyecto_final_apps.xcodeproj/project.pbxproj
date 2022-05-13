@@ -11,8 +11,8 @@
 		7F2D1B652819FF9A00C323EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D1B642819FF9A00C323EF /* ContentView.swift */; };
 		7F2D1B672819FF9C00C323EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2D1B662819FF9C00C323EF /* Assets.xcassets */; };
 		7F2D1B6A2819FF9C00C323EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2D1B692819FF9C00C323EF /* Preview Assets.xcassets */; };
-		7F2D1B71281A038000C323EF /* LogIn_SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D1B70281A038000C323EF /* LogIn_SignUp.swift */; };
 		7F2D1B73281A0D3100C323EF /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D1B72281A0D3100C323EF /* SignUp.swift */; };
+		7FD61020282EBFE20060BFE5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6101F282EBFE20060BFE5 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +21,8 @@
 		7F2D1B642819FF9A00C323EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F2D1B662819FF9C00C323EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F2D1B692819FF9C00C323EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7F2D1B70281A038000C323EF /* LogIn_SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn_SignUp.swift; sourceTree = "<group>"; };
 		7F2D1B72281A0D3100C323EF /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		7FD6101F282EBFE20060BFE5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 			children = (
 				7F2D1B622819FF9A00C323EF /* swift_proyecto_final_appsApp.swift */,
 				7F2D1B642819FF9A00C323EF /* ContentView.swift */,
-				7F2D1B70281A038000C323EF /* LogIn_SignUp.swift */,
 				7F2D1B72281A0D3100C323EF /* SignUp.swift */,
+				7FD6101F282EBFE20060BFE5 /* Menu.swift */,
 				7F2D1B662819FF9C00C323EF /* Assets.xcassets */,
 				7F2D1B682819FF9C00C323EF /* Preview Content */,
 			);
@@ -145,8 +145,8 @@
 			files = (
 				7F2D1B652819FF9A00C323EF /* ContentView.swift in Sources */,
 				7F2D1B73281A0D3100C323EF /* SignUp.swift in Sources */,
+				7FD61020282EBFE20060BFE5 /* Menu.swift in Sources */,
 				7F2D1B632819FF9A00C323EF /* swift_proyecto_final_appsApp.swift in Sources */,
-				7F2D1B71281A038000C323EF /* LogIn_SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

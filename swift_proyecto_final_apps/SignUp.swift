@@ -8,53 +8,40 @@
 import SwiftUI
 
 struct SignUp: View {
-//    @EnvironmentObject var mivistamodelo2 : VistaModeloAPI
-    @State var email = ""
-    @State var password = ""
-    var body: some View {
-        NavigationView {
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200)
-                TextField("Email", text: $email)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(3)
-                TextField("Password", text: $password)
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(3)
+  @State var emailregistro = ""
+  @State var passwordregistro = ""
+  var body: some View {
 
-//                if !(email.isEmpty) && !(password.isEmpty) {
-//                    if(mivistamodelo2.regreso.id ?? 0 != 0){
-//                        Text("Id: \(mivistamodelo2.regreso.id ?? 0)")
-//                        Text("Token: \(mivistamodelo2.regreso.token ?? "")")
-//                    } else {
-//                        Text("\(mivistamodelo2.regreso.error ?? "")")
-//                    }
-//                } else {
-//                    Text("\(mivistamodelo2.regreso.error ?? "")")
-//                }
-                Spacer()
-                    .frame(height: 70)
-                Button {
-                }
-                label: {
-                    Text("Registrarse")
-                }
-                .frame(width: 200)
-                .padding()
-                .foregroundColor(.white)
-                .background(.yellow)
-                .cornerRadius(10)
-            }.padding()
-                .navigationBarTitle("Registro")
+      VStack{
+        Image("logo")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 200)
+        TextField("Email", text: $emailregistro)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(3)
+        SecureInputView("Password", text: $passwordregistro)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(3)
+        Spacer()
+            .frame(height: 70)
+        Button {
         }
-      Spacer()
-        .frame(height: 900)
-    }
+        label: {
+            Text("Registrarse")
+        }
+        .frame(width: 200)
+        .padding()
+        .foregroundColor(.white)
+        .background(.yellow)
+        .cornerRadius(10)
+      }// fin VStack
+    .navigationBarTitle("Registro")
+    .foregroundColor(.blue)
+  }
+
 }
 
 struct SignUp_Previews: PreviewProvider {
