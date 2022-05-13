@@ -38,17 +38,21 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .background(.yellow)
                 .cornerRadius(10)
-                Button {
-                 
-                }
-                label: {
-                    Text("Continuar sin iniciar sesión")
-                }
-                .frame(width: 200)
-                .padding()
-                .foregroundColor(.blue)
-                .background(.white)
-                .cornerRadius(10)
+
+                NavigationLink(
+                    destination: Menu(),
+                    label: {
+                        VStack {
+                            Text("Continuar sin iniciar sesión")
+                            .frame(width: 200)
+                            .padding()
+                            .foregroundColor(.blue)
+                            .background(.white)
+                            .cornerRadius(10)
+                        }
+                    })
+
+
             }.padding()
                 .navigationBarTitle("Inicio de Sesión")
                 .navigationBarItems(trailing: BotonRegistrarse)
