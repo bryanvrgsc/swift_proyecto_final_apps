@@ -10,6 +10,7 @@ import SwiftUI
 struct LogIn: View {
   @State var email = ""
   @State var password = ""
+//  @Binding var isLoggedIn: Bool
     var body: some View {
       NavigationView {
           VStack {
@@ -39,7 +40,7 @@ struct LogIn: View {
               .cornerRadius(10)
 
               NavigationLink(
-                  destination: Menu(),
+                  destination: ContentView(),
                   label: {
                       VStack {
                           Text("Continuar sin iniciar sesión")
@@ -55,9 +56,10 @@ struct LogIn: View {
           }.padding()
               .navigationBarTitle("Inicio de Sesión")
               .navigationBarItems(trailing: BotonRegistrarse)
-              .foregroundColor(.blue)
+               .foregroundColor(.blue)
       }
       Spacer()
+        .navigationBarBackButtonHidden(true)
     }
   var BotonRegistrarse: some View {
       NavigationLink(
@@ -70,6 +72,6 @@ struct LogIn: View {
 
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn()
+      LogIn(email: "", password: "")
     }
 }

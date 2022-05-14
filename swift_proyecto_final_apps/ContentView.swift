@@ -8,51 +8,98 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var id = UIDevice.current.identifierForVendor!.uuidString
+    @State var isLoggedIn: Bool = true
+    @State var email = ""
+    @State var password = ""
+
     var body: some View {
         NavigationView {
-            HStack {
-                Text("Test")
-            }
-            .navigationTitle("Tienda")
-            .foregroundColor(.red)
-            .navigationViewStyle(DefaultNavigationViewStyle())
-            .toolbar {
-                ToolbarItemGroup(
-                    placement: .navigationBarLeading) {
-                    Button {
-                        print("Carrito")
-                    } label: {
-                        Label("Carrito",
-                        systemImage: "person.crop.circle")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color.red)
-                    }
-                }
-                ToolbarItemGroup(
-                    placement: .principal) {
-                    Button(action: {
-                        print("button pressed")
-                    }) {
+            if isLoggedIn {
+                Productos()
+            } else {
+                NavigationView {
+                    VStack {
                         Image("logo")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 50)
+                            .frame(width: 200)
+                        Spacer()
+                            .frame(height: 35)
+                        TextField("Email", text: $email)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(3)
+                        SecureInputView("Password", text: $password)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(3)
+                        Spacer()
+                            .frame(height: 70)
+                        Button {
+                        }
+                        label: {
+                            Text("Iniciar sesión")
+                        }
+
+                        .frame(width: 200)
+
+                        .padding()
+                      
+                        .foregroundColor(.white)
+                        .background(.yellow)
+                        .cornerRadius(10)
+                      Spacer()
+                          .frame(height: 70)
                     }
                 }
-                ToolbarItemGroup(
-                    placement: .navigationBarTrailing) {
-                    Button {
-                        print("Carrito")
-                    } label: {
-                        Label("Carrito",
-                        systemImage: "cart.fill")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color.orange)
+                .navigationBarTitle("Inicio de Sesión")
+                .navigationBarItems(trailing: BotonRegistrarse)
+                .foregroundColor(.blue)
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        NavigationLink(
+                            destination: Productos(),
+                            label: {
+                                VStack {
+                                    Text("Continuar sin iniciar sesión")
+                                        .frame(width: 200)
+                                        .padding()
+                                        .foregroundColor(.blue)
+                                        .background(.white)
+                                        .cornerRadius(10)
+                                }
+                            }
+                        )
                     }
                 }
             }
         }
     }
+}
+
+var BotonRegistrarse: some View {
+    NavigationLink(
+        destination: SignUp(),
+        label: {
+            Text("Registrarse")
+        })
+}
+
+var BotonProductos: some View {
+    NavigationLink(
+        destination: Productos(),
+        label: {
+            VStack {
+                Text("Continuar ")
+                Text("sin iniciar sesión")
+                    .frame(width: 200)
+                    .padding()
+                    .foregroundColor(.blue)
+                    .background(.white)
+                    .cornerRadius(10)
+            }
+        })
 }
 
 struct ContentView_Previews: PreviewProvider {
