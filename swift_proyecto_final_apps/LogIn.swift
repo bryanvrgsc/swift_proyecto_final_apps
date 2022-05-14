@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LogIn: View {
+  
   @State var email = ""
   @State var password = ""
 //  @Binding var isLoggedIn: Bool

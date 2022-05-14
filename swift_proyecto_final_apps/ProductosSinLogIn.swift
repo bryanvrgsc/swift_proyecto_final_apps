@@ -24,7 +24,6 @@ struct ProductosSinLogIn: View {
                   .navigationTitle("Tienda")
                   .foregroundColor(.red)
                   .navigationViewStyle(DefaultNavigationViewStyle())
-//                  .navigationBarItems(leading: BotonUsuario)
                   .navigationBarItems(trailing: BotonCarrito)
                   .toolbar {
                       ToolbarItemGroup(
@@ -41,16 +40,6 @@ struct ProductosSinLogIn: View {
                   }
       
     }
-//  var BotonUsuario: some View {
-//      NavigationLink(
-//        destination: LogIn(email: "", password: ""),
-//          label: {
-//              Label("LogIn",
-//                    systemImage: "person.crop.circle")
-//                  .font(.system(size: 25))
-//                  .foregroundColor(Color.red)
-//          })
-//  }
 
   var BotonCarrito: some View {
       NavigationLink(

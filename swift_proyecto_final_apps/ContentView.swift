@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var id = UIDevice.current.identifierForVendor!.uuidString
-    @State var isLoggedIn: Bool = true
+    @State var isLoggedIn: Bool = false
     @State var email = ""
     @State var password = ""
 
