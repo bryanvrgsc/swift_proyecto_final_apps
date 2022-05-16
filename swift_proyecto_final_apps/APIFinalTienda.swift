@@ -16,10 +16,10 @@ struct DataModel : Decodable {
 
 // MARK: - DataResultado
 struct DataResultado : Decodable {
-    let idProducto, nombre, descripcion, cantidad: String?
-    let imagenPrincipal: String?
-    let precio, idUsuario, usuario, password: String?
-    let nombres, apellidoPaterno, apellidoMaterno: String?
+    let id_producto, nombre, descripcion, cantidad: String?
+    let imagen_principal: String?
+    let precio, id_usuario, usuario, password: String?
+    let nombres, apellido_paterno, apellido_materno: String?
     let suscripcion: Bool?
     let direccion: String?
     let admin: Bool?

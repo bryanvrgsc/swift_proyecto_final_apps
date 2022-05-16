@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vistamodelo : ViewModel
     @State var id = UIDevice.current.identifierForVendor!.uuidString
     @State var isLoggedIn: Bool = false
     @State var email = ""
     @State var password = ""
+
 
     var body: some View {
         NavigationView {
@@ -37,6 +39,14 @@ struct ContentView: View {
                         Spacer()
                             .frame(height: 70)
                         Button {
+                          let params : [String:Any]  = [
+                              "username":  self.email,
+                              "password": self.password
+                          ]
+                          vistamodelo.postLogIn(parameters: params)
+                          if vistamodelo.regreso.message ?? "NO VALIDO" == "VALIDADO" {
+                            isLoggedIn = true
+                          }
                         }
                         label: {
                             Text("Iniciar sesión")
