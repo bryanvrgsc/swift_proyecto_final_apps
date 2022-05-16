@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F23EB25282F19CB000D9AA9 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB24282F19CB000D9AA9 /* LogIn.swift */; };
 		7F23EB29282F1A9C000D9AA9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */; };
 		7F23EB2D282F358A000D9AA9 /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB2C282F358A000D9AA9 /* Carrito.swift */; };
 		7F23EB2F282F4212000D9AA9 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB2E282F4211000D9AA9 /* Perfil.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F23EB24282F19CB000D9AA9 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		7F23EB2C282F358A000D9AA9 /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
 		7F23EB2E282F4211000D9AA9 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			children = (
 				7F2D1B622819FF9A00C323EF /* swift_proyecto_final_appsApp.swift */,
 				7F2D1B642819FF9A00C323EF /* ContentView.swift */,
-				7F23EB24282F19CB000D9AA9 /* LogIn.swift */,
 				7F2D1B72281A0D3100C323EF /* SignUp.swift */,
 				7F23EB34282F5820000D9AA9 /* APIFinalTienda.swift */,
 				7F23EB36282F587A000D9AA9 /* ViewModel.swift */,
@@ -167,7 +164,6 @@
 				7F23EB29282F1A9C000D9AA9 /* SecureInputView.swift in Sources */,
 				7F23EB2F282F4212000D9AA9 /* Perfil.swift in Sources */,
 				7F23EB2D282F358A000D9AA9 /* Carrito.swift in Sources */,
-				7F23EB25282F19CB000D9AA9 /* LogIn.swift in Sources */,
 				7F2D1B652819FF9A00C323EF /* ContentView.swift in Sources */,
 				7F23EB33282F5506000D9AA9 /* Productos.swift in Sources */,
 				7F23EB31282F49B8000D9AA9 /* ProductosSinLogIn.swift in Sources */,

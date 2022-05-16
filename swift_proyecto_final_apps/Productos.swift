@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct Productos: View {
+//  @Binding var isLoggedIn: Bool = true
+//  @State private var isLoggedIn: Bool = false
+  @Environment(\.dismiss) var regresa
     var body: some View {
-              let colors: [Color] = [.red, .green, .blue]
+      
+    let colors: [Color] = [.red, .green, .blue]
+      Button {
+        regresa()
+      }
+      label: {
+          Text("Cerrar sesion")
+      }
+
       ScrollView {
                       ScrollViewReader { _ in
                           ForEach(0 ..< 100) { i in
@@ -38,6 +49,7 @@ struct Productos: View {
                           }
                       }
                   }
+
 
     }
   var BotonUsuario: some View {
