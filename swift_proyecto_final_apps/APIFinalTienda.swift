@@ -8,14 +8,16 @@
 import Foundation
 
 // MARK: - DataModel
-struct DataModel : Decodable {
+
+struct DataModel: Decodable {
     let error: Bool?
     let message: String?
     let data: [DataResultado]?
 }
 
 // MARK: - DataResultado
-struct DataResultado : Decodable {
+
+struct DataResultado: Decodable {
     let id_producto, nombre, descripcion, cantidad: String?
     let imagen_principal: String?
     let precio, id_usuario, usuario, password: String?

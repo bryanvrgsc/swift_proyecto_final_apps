@@ -39,8 +39,7 @@ class ViewModel: ObservableObject {
                 } else {
                     print("no hay datos")
                 }
-            }
-            catch let JsonError {
+            } catch let JsonError {
                 print("error en json ", JsonError.localizedDescription)
             }
         }.resume()
@@ -48,8 +47,7 @@ class ViewModel: ObservableObject {
 
     // MARK: - postLogIn
 
-    func postLogIn(parameters: [String: Any])
-    {
+    func postLogIn(parameters: [String: Any]) {
         guard let url = URL(string: "\(prefixUrl)/login") else {
             print("Error URL")
             return
@@ -76,49 +74,47 @@ class ViewModel: ObservableObject {
                 } else {
                     print("No hay datos")
                 }
-            }
-            catch let JsonError {
+            } catch let JsonError {
                 print("error en json creaFruits", JsonError.localizedDescription)
             }
 
         }.resume()
     } // fin de postLogIn
 
-  // MARK: - postSignUp
+    // MARK: - postSignUp
 
-  func postSignUp(parameters: [String: Any])
-  {
-      guard let url = URL(string: "\(prefixUrl)/signup") else {
-          print("Error URL")
-          return
-      }
-      let data = try! JSONSerialization.data(withJSONObject: parameters)
-      var request = URLRequest(url: url)
-      request.httpMethod = "POST"
-      request.httpBody = data
-      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    func postSignUp(parameters: [String: Any]) {
+        guard let url = URL(string: "\(prefixUrl)/signup") else {
+            print("Error URL")
+            return
+        }
+        let data = try! JSONSerialization.data(withJSONObject: parameters)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = data
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-      URLSession.shared.dataTask(with: request) { data, _, error in
+        URLSession.shared.dataTask(with: request) { data, _, error in
 
-          if error != nil {
-              print("error ", error?.localizedDescription ?? "")
-              return
-          }
+            if error != nil {
+                print("error ", error?.localizedDescription ?? "")
+                return
+            }
 
-          do {
-              if let d = data {
-                  let result = try JSONDecoder().decode(DataModel.self, from: d)
-                  DispatchQueue.main.async {
-                      self.regreso = result
-                  }// fin async
-              } else {
-                  print("No hay datos")
-              }
-          } // fin del do
-          catch let JsonError {
-              print("error en json creaFruits", JsonError.localizedDescription)
-          }
+            do {
+                if let d = data {
+                    let result = try JSONDecoder().decode(DataModel.self, from: d)
+                    DispatchQueue.main.async {
+                        self.regreso = result
+                    } // fin async
+                } else {
+                    print("No hay datos")
+                }
+            } // fin del do
+            catch let JsonError {
+                print("error en json creaFruits", JsonError.localizedDescription)
+            }
 
-      }.resume() // fin dataTask
-  } // fin de postLogIn
+        }.resume() // fin dataTask
+    } // fin de postLogIn
 }

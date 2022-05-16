@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7F23EB29282F1A9C000D9AA9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */; };
 		7F23EB2D282F358A000D9AA9 /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB2C282F358A000D9AA9 /* Carrito.swift */; };
-		7F23EB2F282F4212000D9AA9 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB2E282F4211000D9AA9 /* Perfil.swift */; };
 		7F23EB31282F49B8000D9AA9 /* ProductosSinLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */; };
 		7F23EB33282F5506000D9AA9 /* Productos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB32282F5506000D9AA9 /* Productos.swift */; };
 		7F23EB35282F5820000D9AA9 /* APIFinalTienda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB34282F5820000D9AA9 /* APIFinalTienda.swift */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		7F23EB2C282F358A000D9AA9 /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
-		7F23EB2E282F4211000D9AA9 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductosSinLogIn.swift; sourceTree = "<group>"; };
 		7F23EB32282F5506000D9AA9 /* Productos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productos.swift; sourceTree = "<group>"; };
 		7F23EB34282F5820000D9AA9 /* APIFinalTienda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFinalTienda.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				7F23EB36282F587A000D9AA9 /* ViewModel.swift */,
 				7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */,
 				7F23EB32282F5506000D9AA9 /* Productos.swift */,
-				7F23EB2E282F4211000D9AA9 /* Perfil.swift */,
 				7F23EB2C282F358A000D9AA9 /* Carrito.swift */,
 				7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */,
 				7F2D1B662819FF9C00C323EF /* Assets.xcassets */,
@@ -162,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F23EB29282F1A9C000D9AA9 /* SecureInputView.swift in Sources */,
-				7F23EB2F282F4212000D9AA9 /* Perfil.swift in Sources */,
 				7F23EB2D282F358A000D9AA9 /* Carrito.swift in Sources */,
 				7F2D1B652819FF9A00C323EF /* ContentView.swift in Sources */,
 				7F23EB33282F5506000D9AA9 /* Productos.swift in Sources */,

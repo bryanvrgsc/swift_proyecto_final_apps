@@ -38,16 +38,16 @@ struct ContentView: View {
                         }
                         HStack {
                             IconoVista(title: "Seguridad", textColor: .white, bgColor: .yellow, icon: "lock.shield.fill")
-                          Button {
-                              isLoggedIn = false
-                          } label: {
-                            IconoVista(title: "Cerrar sesión", textColor: .white, bgColor: .red, icon: "rectangle.portrait.and.arrow.right")
-                          }
+                            Button {
+                                isLoggedIn = false
+                            } label: {
+                                IconoVista(title: "Cerrar sesión", textColor: .white, bgColor: .red, icon: "rectangle.portrait.and.arrow.right")
+                            }
                         }
 
                         Spacer()
                             .frame(height: 35)
-                        
+
                     }.padding(.horizontal)
                 }
                 .navigationBarItems(trailing: BotonCarrito)
@@ -165,17 +165,6 @@ var BotonCarrito: some View {
         })
 }
 
-var BotonUsuario: some View {
-    NavigationLink(
-        destination: Perfil(),
-        label: {
-            Label("LogIn",
-                  systemImage: "person.crop.circle")
-                .font(.system(size: 25))
-                .foregroundColor(Color.red)
-        })
-}
-
 var BotonProductosSinLogIn: some View {
     NavigationLink(
         destination: ProductosSinLogIn(),
@@ -230,7 +219,7 @@ struct IconoVista: View {
             }
 
             Text(title)
-            .font(.system(.subheadline, design: .rounded))
+                .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.black)
                 .foregroundColor(textColor)
         }
