@@ -39,7 +39,7 @@ struct ContentView: View {
                         Spacer()
                             .frame(height: 70)
                         Button {
-                          let params : [String:Any]  = [
+                          let params : [String:Any] = [
                               "username":  self.email,
                               "password": self.password
                           ]
@@ -69,7 +69,7 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
                         NavigationLink(
-                            destination: Productos(),
+                            destination: ProductosSinLogIn(),
                             label: {
                                 VStack {
                                     Text("Continuar sin iniciar sesión")
