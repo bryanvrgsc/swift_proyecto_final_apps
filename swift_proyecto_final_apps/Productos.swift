@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct Productos: View {
+    @Binding var userid: String
     @EnvironmentObject var vistamodelo: ViewModel
+
     var body: some View {
         let colors: [Color] = [.orange, .red, .green, .blue]
 
@@ -28,7 +30,9 @@ struct Productos: View {
                                 foto: item.imagen_principal ?? "",
                                 textColor: .black,
                                 bgColor: colors[toInt(s: item.id_producto) % colors.count],
-                                precio: item.precio ?? ""
+                                precio: item.precio ?? "",
+                                userid: userid,
+                                productoid: item.id_producto ?? ""
                             )
                         }
                     )
@@ -71,16 +75,19 @@ struct Productos: View {
 
 struct Productos_Previews: PreviewProvider {
     static var previews: some View {
-        Productos()
+      Productos(userid: .constant(""))
     }
 }
 
 struct Producto: View {
+    @EnvironmentObject var vistamodelo: ViewModel
     var title: String
     var foto: String
     var textColor: Color
     var bgColor: Color
     var precio: String
+    var userid: String
+    var productoid: String
 
     var body: some View {
         HStack {
@@ -100,6 +107,16 @@ struct Producto: View {
                         .font(.system(.title2, design: .rounded))
                         .fontWeight(.black)
                         .foregroundColor(textColor)
+                  Button {
+                      let params: [String: Any] = [
+                          "userid": self.userid,
+                          "productoid": self.productoid,
+                      ]
+                      vistamodelo.postAgregarProducto(parameters: params)
+                  }
+                  label: {
+                      Text("Agregar al carrito")
+                  }
                 }
                 Spacer()
             }

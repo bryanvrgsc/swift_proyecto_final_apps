@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var vistamodelo: ViewModel
     @State var id = UIDevice.current.identifierForVendor!.uuidString
     @State var isLoggedIn: Bool = false
+    @State var user_id = ""
     @State var email = ""
     @State var password = ""
 
@@ -23,8 +24,7 @@ struct ContentView: View {
                       HStack {
 
                         NavigationLink(
-                            destination: Productos()
-                            ,
+                            destination: Productos(userid: $user_id),
                             label: {
                               Image("logo")
                                   .resizable()
@@ -64,14 +64,17 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItemGroup(
                         placement: .principal) {
-                        Button(action: {
-                            print("Logo")
-                        }) {
-                            Image("logo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 50)
-                        }
+                          NavigationLink(
+                              destination: Productos(userid: $user_id),
+                              label: {
+                                  VStack {
+                                    Image("logo")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 200)
+                                  }
+                              }
+                          )
                     }
                 }
             } else {
@@ -100,7 +103,8 @@ struct ContentView: View {
                             ]
                             vistamodelo.postLogIn(parameters: params)
                             if vistamodelo.regreso.message ?? "NO VALIDO" == "VALIDADO" {
-                                isLoggedIn = true
+                              isLoggedIn = true
+                              user_id = vistamodelo.regreso.data?[0].id_usuario ?? ""
                             }
                         }
                         label: {
@@ -148,21 +152,21 @@ var BotonRegistrarse: some View {
         })
 }
 
-var BotonProductos: some View {
-    NavigationLink(
-        destination: Productos(),
-        label: {
-            VStack {
-                Text("Continuar ")
-                Text("sin iniciar sesión")
-                    .frame(width: 200)
-                    .padding()
-                    .foregroundColor(.blue)
-                    .background(.white)
-                    .cornerRadius(10)
-            }
-        })
-}
+//var BotonProductos: some View {
+//    NavigationLink(
+//        destination: Productos(email: $email),
+//        label: {
+//            VStack {
+//                Text("Continuar ")
+//                Text("sin iniciar sesión")
+//                    .frame(width: 200)
+//                    .padding()
+//                    .foregroundColor(.blue)
+//                    .background(.white)
+//                    .cornerRadius(10)
+//            }
+//        })
+//}
 
 var BotonCarrito: some View {
     NavigationLink(
