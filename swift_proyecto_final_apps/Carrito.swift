@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct Carrito: View {
+    @Binding var userid: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Carrito \(userid)")
     }
 }
 
 struct Carrito_Previews: PreviewProvider {
     static var previews: some View {
-        Carrito()
+      Carrito(userid: .constant(""))
     }
 }

@@ -41,7 +41,7 @@ struct Productos: View {
             .navigationTitle("Tienda")
             .foregroundColor(.red)
             .navigationViewStyle(DefaultNavigationViewStyle())
-            .navigationBarItems(trailing: BotonCarrito)
+            .navigationBarItems(trailing: BotonCarrito.environmentObject(vistamodelo))
             .toolbar {
                 ToolbarItemGroup(
                     placement: .principal) {
@@ -63,7 +63,7 @@ struct Productos: View {
 
     var BotonCarrito: some View {
         NavigationLink(
-            destination: Carrito(),
+          destination: Carrito(userid: $userid),
             label: {
                 Label("Carrito",
                       systemImage: "cart.fill")

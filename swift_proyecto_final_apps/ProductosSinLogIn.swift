@@ -60,7 +60,7 @@ struct ProductosSinLogIn: View {
 
     var BotonCarrito: some View {
         NavigationLink(
-            destination: Carrito(),
+            destination: CarritoSinLogin(),
             label: {
                 Label("Carrito",
                       systemImage: "cart.fill")

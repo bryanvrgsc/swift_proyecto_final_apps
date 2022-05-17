@@ -60,7 +60,7 @@ struct ContentView: View {
 
                     }.padding(.horizontal)
                 }
-                .navigationBarItems(trailing: BotonCarrito)
+                .navigationBarItems(trailing: BotonCarrito.environmentObject(vistamodelo))
                 .toolbar {
                     ToolbarItemGroup(
                         placement: .principal) {
@@ -142,6 +142,16 @@ struct ContentView: View {
             }
         }
     }
+  var BotonCarrito: some View {
+      NavigationLink(
+        destination: Carrito(userid: $user_id),
+          label: {
+              Label("Carrito",
+                    systemImage: "cart.fill")
+                  .font(.system(size: 25))
+                  .foregroundColor(Color.orange)
+          })
+  }
 }
 
 var BotonRegistrarse: some View {
@@ -152,32 +162,7 @@ var BotonRegistrarse: some View {
         })
 }
 
-//var BotonProductos: some View {
-//    NavigationLink(
-//        destination: Productos(email: $email),
-//        label: {
-//            VStack {
-//                Text("Continuar ")
-//                Text("sin iniciar sesión")
-//                    .frame(width: 200)
-//                    .padding()
-//                    .foregroundColor(.blue)
-//                    .background(.white)
-//                    .cornerRadius(10)
-//            }
-//        })
-//}
 
-var BotonCarrito: some View {
-    NavigationLink(
-        destination: Carrito(),
-        label: {
-            Label("Carrito",
-                  systemImage: "cart.fill")
-                .font(.system(size: 25))
-                .foregroundColor(Color.orange)
-        })
-}
 
 var BotonProductosSinLogIn: some View {
     NavigationLink(
