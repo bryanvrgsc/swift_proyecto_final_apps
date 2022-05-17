@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductosSinLogIn: View {
     @EnvironmentObject var vistamodelo: ViewModel
     var body: some View {
-//        let colors: [Color] = [.red, .green, .blue]
+      let colors: [Color] = [.orange, .red, .green, .blue]
 
         ScrollView {
             ForEach(vistamodelo.resultado, id: \.id_producto) { item in
@@ -28,7 +28,7 @@ struct ProductosSinLogIn: View {
                                 title: item.nombre ?? "",
                                 foto: item.imagen_principal ?? "",
                                 textColor: .black,
-                                bgColor: .white
+                                bgColor: (colors[toInt(s: item.id_producto) % colors.count])
                             )
                         }
                     )
@@ -129,4 +129,13 @@ struct Producto: View {
         .background(bgColor)
         .cornerRadius(10)
     }
+}
+
+func toInt(s: String?) -> Int {
+  var result = 0
+  if let str: String = s,
+     let i = Int(str) {
+      result = i
+  }
+  return result
 }
