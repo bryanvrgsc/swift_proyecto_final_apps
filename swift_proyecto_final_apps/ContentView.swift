@@ -44,7 +44,6 @@ struct ContentView: View {
                                 IconoVista(title: "Cerrar sesión", textColor: .white, bgColor: .red, icon: "rectangle.portrait.and.arrow.right")
                             }
                         }
-
                         Spacer()
                             .frame(height: 35)
 
