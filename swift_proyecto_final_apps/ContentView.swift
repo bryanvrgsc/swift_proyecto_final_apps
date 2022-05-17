@@ -20,10 +20,21 @@ struct ContentView: View {
                 ScrollView {
                     VStack {
                         HeaderView(title: "Cuenta")
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200)
+                      HStack {
+
+                        NavigationLink(
+                            destination: Productos()
+                            ,
+                            label: {
+                              Image("logo")
+                                  .resizable()
+                                  .scaledToFit()
+                                  .frame(width: 200)
+                            }
+                        )
+
+
+                        }
                         HStack {
                             IconoVista(title: "Cuenta", textColor: .white, bgColor: .purple, icon: "person.fill")
                             IconoVista(title: "Dirección", textColor: .white, bgColor: .gray, icon: "house.fill")

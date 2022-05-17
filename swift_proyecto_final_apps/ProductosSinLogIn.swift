@@ -21,39 +21,20 @@ struct ProductosSinLogIn: View {
                             producto: item.nombre ?? "",
                             foto: item.imagen_principal ?? "",
                             cantidad: item.cantidad ?? ""
-
                         ),
                         label: {
-                            Producto(
+                            ProductoSin(
                                 title: item.nombre ?? "",
                                 foto: item.imagen_principal ?? "",
                                 textColor: .black,
-                                bgColor: (colors[toInt(s: item.id_producto) % colors.count])
+                                bgColor: (colors[toInt(s: item.id_producto) % colors.count]),
+                                precio: item.precio ?? ""
                             )
                         }
                     )
                 }.padding(.horizontal)
-//                    }
-//                )
-                //                    }
-                //                }
-                //            }
 
-                //            ScrollViewReader { _ in
-                //                ForEach(0 ..< 100) { i in
-                //                    Text("Example \(i)")
-                //                        .font(.title)
-                //                        .frame(width: 200, height: 200)
-                //                        .background(colors[i % colors.count])
-                //                        .id(i)
-                //                }
-                //            }
-
-                //          ForEach(vistamodelo.resultado, id: \.id_producto) { item in
-                //            Button
-//              }
             }
-//          }
             .navigationTitle("Tienda")
             .foregroundColor(.red)
             .navigationViewStyle(DefaultNavigationViewStyle())
@@ -95,11 +76,12 @@ struct ProductosSinLogIn_Previews: PreviewProvider {
     }
 }
 
-struct Producto: View {
+struct ProductoSin: View {
     var title: String
     var foto: String
     var textColor: Color
     var bgColor: Color
+    var precio: String
 
     var body: some View {
         HStack {
