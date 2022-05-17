@@ -32,7 +32,7 @@ struct ProductosSinLogIn: View {
                             )
                         }
                     )
-                }
+                }.padding(.horizontal)
 //                    }
 //                )
                 //                    }
