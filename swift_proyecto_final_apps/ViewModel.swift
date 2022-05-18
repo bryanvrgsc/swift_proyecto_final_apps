@@ -116,8 +116,8 @@ class ViewModel: ObservableObject {
 
   // MARK: - postAgregarProducto
 
-  func postAgregarProducto(parameters: [String: Any]) {
-      guard let url = URL(string: "\(prefixUrl)/agregar_producto") else {
+  func postAgregarProductoCarrito(parameters: [String: Any]) {
+      guard let url = URL(string: "\(prefixUrl)/agregar_producto_carrito") else {
           print("Error URL")
           return
       }
@@ -151,5 +151,32 @@ class ViewModel: ObservableObject {
 
       }.resume() // fin dataTask
   } // fin de postLogIn
+
+  func getProductosCarrito() {
+      guard let url = URL(string: "\(prefixUrl)/carrito") else {
+          print("Error URL")
+          return
+      }
+      URLSession.shared.dataTask(with: url) { data, _, error in
+
+          if error != nil {
+              print("Error ", error?.localizedDescription ?? "")
+              return
+          }
+
+          do {
+              if let d = data {
+                  let result = try JSONDecoder().decode(DataModel.self, from: d)
+                  DispatchQueue.main.async {
+                      self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
+                  }
+              } else {
+                  print("No hay datos")
+              }
+          } catch let JsonError {
+              print("Error en JSON GetProductos ", JsonError.localizedDescription)
+          }
+      }.resume()
+  } // fin de getProductos
 
 }

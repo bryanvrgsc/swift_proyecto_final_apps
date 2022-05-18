@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct Carrito: View {
+    @EnvironmentObject var vistamodelo: ViewModel
     @Binding var userid: String
     var body: some View {
-        Text("Carrito \(userid)")
+        VStack {
+            Text("Carrito \(userid)")
+        }
+        .onAppear {
+            vistamodelo.getProductosCarrito()
+        }
     }
 }
 
 struct Carrito_Previews: PreviewProvider {
     static var previews: some View {
-      Carrito(userid: .constant(""))
+        Carrito(userid: .constant(""))
     }
 }

@@ -112,7 +112,7 @@ struct Producto: View {
                           "userid": self.userid,
                           "productoid": self.productoid,
                       ]
-                      vistamodelo.postAgregarProducto(parameters: params)
+                      vistamodelo.postAgregarProductoCarrito(parameters: params)
                   }
                   label: {
                       Text("Agregar al carrito")

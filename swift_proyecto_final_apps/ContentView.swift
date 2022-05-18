@@ -33,7 +33,6 @@ struct ContentView: View {
                             }
                         )
 
-
                         }
                         HStack {
                             IconoVista(title: "Cuenta", textColor: .white, bgColor: .purple, icon: "person.fill")
