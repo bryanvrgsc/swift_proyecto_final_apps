@@ -29,6 +29,20 @@ struct Carrito: View {
                         cantidad: item.cantidad ?? ""
                     )
                 }
+
+                if vistamodelo.carrito.count > 0 {
+                    NavigationLink(
+                        destination: Checkout(userid: $userid),
+                        label: {
+                            Text("Checkout")
+                                .frame(width: 200)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.orange)
+                                .cornerRadius(10)
+                        }
+                    )
+                }
             }.padding(.horizontal)
         }
         .navigationTitle("Carrito")
