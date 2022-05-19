@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductosSinLogIn: View {
     @EnvironmentObject var vistamodelo: ViewModel
     var body: some View {
-      let colors: [Color] = [.orange, .red, .green, .blue]
+      let colors: [Color] = [.orange, .blue, .yellow]
 
         ScrollView {
             ForEach(vistamodelo.resultado, id: \.id_producto) { item in

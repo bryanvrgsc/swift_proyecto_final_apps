@@ -22,13 +22,16 @@ struct Productos: View {
                         destination: VistaProducto(
                             producto: item.nombre ?? "",
                             foto: item.imagen_principal ?? "",
-                            cantidad: item.cantidad ?? ""
+                            precio: item.precio ?? "",
+                            cantidad: item.cantidad ?? "",
+                            productoid: item.id_producto ?? "",
+                            userid: userid
                         ),
                         label: {
                             Producto(
                                 title: item.nombre ?? "",
                                 foto: item.imagen_principal ?? "",
-                                textColor: .black,
+                                textColor: .white,
                                 bgColor: colors[toInt(s: item.id_producto) % colors.count],
                                 precio: item.precio ?? "",
                                 userid: userid,
@@ -63,7 +66,7 @@ struct Productos: View {
 
     var BotonCarrito: some View {
         NavigationLink(
-          destination: Carrito(userid: $userid),
+            destination: Carrito(userid: $userid),
             label: {
                 Label("Carrito",
                       systemImage: "cart.fill")
@@ -75,7 +78,7 @@ struct Productos: View {
 
 struct Productos_Previews: PreviewProvider {
     static var previews: some View {
-      Productos(userid: .constant(""))
+        Productos(userid: .constant(""))
     }
 }
 
@@ -95,29 +98,41 @@ struct Producto: View {
                 image in image
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150)
+                    .frame(width: 120)
             } placeholder: {
                 ProgressView()
             }
+            .background(.white)
+            .cornerRadius(10)
+            Spacer()
 
             VStack {
-                HStack {
-                    Spacer()
-                    Text(title)
-                        .font(.system(.title2, design: .rounded))
-                        .fontWeight(.black)
-                        .foregroundColor(textColor)
-                  Button {
-                      let params: [String: Any] = [
-                          "userid": self.userid,
-                          "productoid": self.productoid,
-                      ]
-                      vistamodelo.postAgregarProductoCarrito(parameters: params)
-                  }
-                  label: {
-                      Text("Agregar al carrito")
-                  }
+                Spacer()
+                Text(title)
+                    .font(.system(.title2, design: .rounded))
+                    .fontWeight(.black)
+                    .foregroundColor(textColor)
+                Spacer()
+                    .frame(height: 10)
+                Text("$\(precio)")
+                    .font(.system(.title3, design: .rounded))
+                    .fontWeight(.black)
+                    .foregroundColor(textColor)
+                Spacer()
+                    .frame(height: 10)
+                Button {
+                    let params: [String: Any] = [
+                        "username": self.userid,
+                        "producto": self.productoid,
+                    ]
+                    vistamodelo.postAgregarProductoCarrito(parameters: params)
                 }
+                label: {
+                    Text("Agregar al carrito")
+                }
+                .background(.yellow)
+                .cornerRadius(10)
+
                 Spacer()
             }
             Spacer()

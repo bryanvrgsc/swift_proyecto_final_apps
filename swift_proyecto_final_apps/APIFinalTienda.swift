@@ -19,6 +19,7 @@ struct DataModel: Decodable {
 
 struct DataResultado: Decodable {
     let id_producto, nombre, descripcion, cantidad: String?
+    let id_carrito: String?
     let imagen_principal: String?
     let precio, id_usuario, usuario, password: String?
     let nombres, apellido_paterno, apellido_materno: String?

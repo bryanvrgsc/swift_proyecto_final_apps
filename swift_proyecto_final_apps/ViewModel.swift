@@ -9,7 +9,7 @@ import Foundation
 
 class ViewModel: ObservableObject {
     @Published var resultado = [DataResultado]()
-    @Published var regreso = DataModel(error: false, message: "", data: [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)])
+  @Published var regreso = DataModel(error: false, message: "", data: [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)])
     let prefixUrl = "https://apps2-final-tienda.glitch.me"
 
     // MARK: - getProductos
@@ -30,7 +30,7 @@ class ViewModel: ObservableObject {
                 if let d = data {
                     let result = try JSONDecoder().decode(DataModel.self, from: d)
                     DispatchQueue.main.async {
-                        self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
+                      self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
                     }
                 } else {
                     print("No hay datos")
@@ -152,6 +152,7 @@ class ViewModel: ObservableObject {
       }.resume() // fin dataTask
   } // fin de postLogIn
 
+
   func getProductosCarrito() {
       guard let url = URL(string: "\(prefixUrl)/carrito") else {
           print("Error URL")
@@ -168,7 +169,7 @@ class ViewModel: ObservableObject {
               if let d = data {
                   let result = try JSONDecoder().decode(DataModel.self, from: d)
                   DispatchQueue.main.async {
-                      self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
+                    self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
                   }
               } else {
                   print("No hay datos")

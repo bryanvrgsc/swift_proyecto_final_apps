@@ -11,8 +11,10 @@ struct VistaProducto: View {
     @EnvironmentObject var vistamodelo: ViewModel
     @State var producto = "0"
     @State var foto = "0"
+    @State var precio = ""
     @State var cantidad = "0"
-    @State var id_producto = -1
+    @State var productoid = ""
+    @State var userid = ""
 
     @Environment(\.dismiss) var regresa
     var body: some View {
@@ -24,7 +26,21 @@ struct VistaProducto: View {
             } placeholder: {
                 ProgressView()
             }
-          Spacer()
+
+            Button {
+                let params: [String: Any] = [
+                    "username": self.userid,
+                    "producto": self.productoid,
+                ]
+                vistamodelo.postAgregarProductoCarrito(parameters: params)
+            }
+            label: {
+                Text("Agregar al carrito")
+            }
+            .background(.yellow)
+            .cornerRadius(10)
+
+            Spacer()
 
         }.padding() // fin VStack
             .navigationBarTitle(
