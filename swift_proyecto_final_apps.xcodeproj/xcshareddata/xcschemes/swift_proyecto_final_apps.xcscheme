@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F2D1B5E2819FF9A00C323EF"
-               BuildableName = "swift_proyecto_final_apps.app"
+               BuildableName = "SuperStore.app"
                BlueprintName = "swift_proyecto_final_apps"
                ReferencedContainer = "container:swift_proyecto_final_apps.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F2D1B5E2819FF9A00C323EF"
-            BuildableName = "swift_proyecto_final_apps.app"
+            BuildableName = "SuperStore.app"
             BlueprintName = "swift_proyecto_final_apps"
             ReferencedContainer = "container:swift_proyecto_final_apps.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7F2D1B5E2819FF9A00C323EF"
-            BuildableName = "swift_proyecto_final_apps.app"
+            BuildableName = "SuperStore.app"
             BlueprintName = "swift_proyecto_final_apps"
             ReferencedContainer = "container:swift_proyecto_final_apps.xcodeproj">
          </BuildableReference>
