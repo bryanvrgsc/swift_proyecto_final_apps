@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CarritoSinLogin: View {
     var body: some View {
-        Text("FALTA LOGIN")
+      VStack{
+        Text("REGISTRATE")
+        Text("E INICIA SESIÓN")
+        Text("PARA AGREGAR PRODUCTOS")
+        Text("AL CARRITO")
+      }
     }
 }
 

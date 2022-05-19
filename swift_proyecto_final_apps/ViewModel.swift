@@ -8,7 +8,8 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published var resultado = [DataResultado]()
+  @Published var resultado = [DataResultado]()
+  @Published var carrito = [DataResultado]()
   @Published var regreso = DataModel(error: false, message: "", data: [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)])
     let prefixUrl = "https://apps2-final-tienda.glitch.me"
 
@@ -152,13 +153,20 @@ class ViewModel: ObservableObject {
       }.resume() // fin dataTask
   } // fin de postLogIn
 
+  // MARK: - postCarrito
 
-  func getProductosCarrito() {
+  func postCarrito(parameters: [String: Any]) {
       guard let url = URL(string: "\(prefixUrl)/carrito") else {
           print("Error URL")
           return
       }
-      URLSession.shared.dataTask(with: url) { data, _, error in
+      let data = try! JSONSerialization.data(withJSONObject: parameters)
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.httpBody = data
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+      URLSession.shared.dataTask(with: request) { data, _, error in
 
           if error != nil {
               print("Error ", error?.localizedDescription ?? "")
@@ -168,16 +176,18 @@ class ViewModel: ObservableObject {
           do {
               if let d = data {
                   let result = try JSONDecoder().decode(DataModel.self, from: d)
+                  print(result)
                   DispatchQueue.main.async {
-                    self.resultado = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
+                    self.carrito = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
                   }
               } else {
                   print("No hay datos")
               }
           } catch let JsonError {
-              print("Error en JSON GetProductos ", JsonError.localizedDescription)
+              print("Error en JSON Carrito", JsonError.localizedDescription)
           }
+
       }.resume()
-  } // fin de getProductos
+  } // fin de postLogIn
 
 }
