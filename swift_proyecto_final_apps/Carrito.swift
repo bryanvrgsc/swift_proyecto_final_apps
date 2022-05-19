@@ -10,9 +10,11 @@ import SwiftUI
 struct Carrito: View {
     @EnvironmentObject var vistamodelo: ViewModel
     @Binding var userid: String
+    @State var total = 0
+    @State var precio = 0
+    @State var cantidad = 0
     var body: some View {
         let colors: [Color] = [.orange, .blue, .yellow]
-
         ScrollView {
             VStack {
                 ForEach(vistamodelo.carrito, id: \.id_producto) { item in
@@ -97,13 +99,52 @@ struct VistaElementoCarrito: View {
                     .foregroundColor(textColor)
                 Spacer()
                     .frame(height: 10)
-                Text(cantidad)
-                    .font(.system(.title3, design: .rounded))
-                    .fontWeight(.black)
-                    .foregroundColor(textColor)
+                HStack {
+                    Button {
+                        let params: [String: Any] = [
+                            "username": self.userid,
+                            "producto": self.productoid,
+                        ]
+                        vistamodelo.postCarritoMenos(parameters: params)
+                    } label: {
+                        Label("",
+                              systemImage: "minus.circle")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color.white)
+                    }
+                    Spacer()
+                    Text(cantidad)
+                        .font(.system(.title3, design: .rounded))
+                        .fontWeight(.black)
+                        .foregroundColor(textColor)
+                    Spacer()
+                    Button {
+                        let params: [String: Any] = [
+                            "username": self.userid,
+                            "producto": self.productoid,
+                        ]
+                        vistamodelo.postAgregarProductoCarrito(parameters: params)
+                    } label: {
+                        Label("",
+                              systemImage: "plus.circle")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color.white)
+                    }
+                }
                 Spacer()
                     .frame(height: 10)
-
+                Button {
+                    let params: [String: Any] = [
+                        "username": self.userid,
+                        "producto": self.productoid,
+                    ]
+                    vistamodelo.postCarritoBorrar(parameters: params)
+                } label: {
+                    Label("Borrar",
+                          systemImage: "clear.fill")
+                        .font(.system(size: 25))
+                        .foregroundColor(Color.white)
+                }
                 Spacer()
             }
             Spacer()

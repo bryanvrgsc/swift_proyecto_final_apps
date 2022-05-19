@@ -176,7 +176,6 @@ class ViewModel: ObservableObject {
           do {
               if let d = data {
                   let result = try JSONDecoder().decode(DataModel.self, from: d)
-                  print(result)
                   DispatchQueue.main.async {
                     self.carrito = result.data ?? [DataResultado(id_producto: "", nombre: "", descripcion: "", cantidad: "", id_carrito: "", imagen_principal: "", precio: "", id_usuario: "", usuario: "", password: "", nombres: "", apellido_paterno: "", apellido_materno: "", suscripcion: false, direccion: "", admin: false)]
                   }
@@ -188,6 +187,82 @@ class ViewModel: ObservableObject {
           }
 
       }.resume()
+  } // fin de postLogIn
+
+  // MARK: - postCarritoMas
+
+  func postCarritoMenos(parameters: [String: Any]) {
+      guard let url = URL(string: "\(prefixUrl)/carritomenos") else {
+          print("Error URL")
+          return
+      }
+      let data = try! JSONSerialization.data(withJSONObject: parameters)
+      print(parameters)
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.httpBody = data
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+      URLSession.shared.dataTask(with: request) { data, _, error in
+
+          if error != nil {
+              print("Error ", error?.localizedDescription ?? "")
+              return
+          }
+
+          do {
+              if let d = data {
+                  let result = try JSONDecoder().decode(DataModel.self, from: d)
+                  DispatchQueue.main.async {
+                      self.regreso = result
+                  } // fin async
+              } else {
+                  print("No hay datos")
+              }
+          } // fin del do
+          catch let JsonError {
+              print("Error en json AgregaProductos", JsonError.localizedDescription)
+          }
+
+      }.resume() // fin dataTask
+  } // fin de postLogIn
+
+  // MARK: - postCarritoBorrar
+
+  func postCarritoBorrar(parameters: [String: Any]) {
+      guard let url = URL(string: "\(prefixUrl)/carritoborrar") else {
+          print("Error URL")
+          return
+      }
+      let data = try! JSONSerialization.data(withJSONObject: parameters)
+      print(parameters)
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.httpBody = data
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+      URLSession.shared.dataTask(with: request) { data, _, error in
+
+          if error != nil {
+              print("Error ", error?.localizedDescription ?? "")
+              return
+          }
+
+          do {
+              if let d = data {
+                  let result = try JSONDecoder().decode(DataModel.self, from: d)
+                  DispatchQueue.main.async {
+                      self.regreso = result
+                  } // fin async
+              } else {
+                  print("No hay datos")
+              }
+          } // fin del do
+          catch let JsonError {
+              print("Error en json AgregaProductos", JsonError.localizedDescription)
+          }
+
+      }.resume() // fin dataTask
   } // fin de postLogIn
 
 }
