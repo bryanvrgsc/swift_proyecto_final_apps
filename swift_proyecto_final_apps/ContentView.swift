@@ -124,7 +124,7 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
                         NavigationLink(
-                            destination: ProductosSinLogIn(),
+                            destination: ProductosSinLogin(),
                             label: {
                                 VStack {
                                     Text("Continuar sin iniciar sesión")
@@ -165,7 +165,7 @@ var BotonRegistrarse: some View {
 
 var BotonProductosSinLogIn: some View {
     NavigationLink(
-        destination: ProductosSinLogIn(),
+        destination: ProductosSinLogin(),
         label: {
             VStack {
                 Text("Continuar ")

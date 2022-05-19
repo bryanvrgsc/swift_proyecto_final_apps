@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F01F0642836DA2C008A7FAD /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01F0632836DA2C008A7FAD /* Checkout.swift */; };
+		7F01F0662836DFE3008A7FAD /* VistaProductoSin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F01F0652836DFE3008A7FAD /* VistaProductoSin.swift */; };
 		7F23EB29282F1A9C000D9AA9 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */; };
 		7F23EB2D282F358A000D9AA9 /* Carrito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB2C282F358A000D9AA9 /* Carrito.swift */; };
 		7F23EB31282F49B8000D9AA9 /* ProductosSinLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7F01F0632836DA2C008A7FAD /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		7F01F0652836DFE3008A7FAD /* VistaProductoSin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaProductoSin.swift; sourceTree = "<group>"; };
 		7F23EB28282F1A9C000D9AA9 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		7F23EB2C282F358A000D9AA9 /* Carrito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrito.swift; sourceTree = "<group>"; };
 		7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductosSinLogIn.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				7F23EB32282F5506000D9AA9 /* Productos.swift */,
 				7F23EB30282F49B8000D9AA9 /* ProductosSinLogIn.swift */,
 				7F23EB382833114B000D9AA9 /* VistaProducto.swift */,
+				7F01F0652836DFE3008A7FAD /* VistaProductoSin.swift */,
 				7F23EB2C282F358A000D9AA9 /* Carrito.swift */,
 				7F01F0632836DA2C008A7FAD /* Checkout.swift */,
 				7F87382228336A540051B3F8 /* CarritoSinLogin.swift */,
@@ -174,6 +177,7 @@
 				7F23EB33282F5506000D9AA9 /* Productos.swift in Sources */,
 				7F23EB31282F49B8000D9AA9 /* ProductosSinLogIn.swift in Sources */,
 				7F2D1B73281A0D3100C323EF /* SignUp.swift in Sources */,
+				7F01F0662836DFE3008A7FAD /* VistaProductoSin.swift in Sources */,
 				7F23EB35282F5820000D9AA9 /* DataModel.swift in Sources */,
 				7F23EB392833114B000D9AA9 /* VistaProducto.swift in Sources */,
 				7F87382328336A540051B3F8 /* CarritoSinLogin.swift in Sources */,

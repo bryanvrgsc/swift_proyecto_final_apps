@@ -7,38 +7,41 @@
 
 import SwiftUI
 
-struct ProductosSinLogIn: View {
+struct ProductosSinLogin: View {
     @EnvironmentObject var vistamodelo: ViewModel
+
     var body: some View {
-      let colors: [Color] = [.orange, .blue, .yellow]
+        let colors: [Color] = [.orange, .blue, .yellow]
 
         ScrollView {
             ForEach(vistamodelo.resultado, id: \.id_producto) { item in
 
                 VStack {
                     NavigationLink(
-                        destination: VistaProducto(
+                        destination: VistaProductoSin(
                             producto: item.nombre ?? "",
                             foto: item.imagen_principal ?? "",
-                            cantidad: item.cantidad ?? ""
+                            precio: item.precio ?? "",
+                            cantidad: item.cantidad ?? "",
+                            productoid: item.id_producto ?? ""
                         ),
                         label: {
                             ProductoSin(
                                 title: item.nombre ?? "",
                                 foto: item.imagen_principal ?? "",
-                                textColor: .black,
-                                bgColor: (colors[toInt(s: item.id_producto) % colors.count]),
-                                precio: item.precio ?? ""
+                                textColor: .white,
+                                bgColor: colors[toInt(s: item.id_producto) % colors.count],
+                                precio: item.precio ?? "",
+                                productoid: item.id_producto ?? ""
                             )
                         }
                     )
                 }.padding(.horizontal)
-
             }
             .navigationTitle("Tienda")
             .foregroundColor(.red)
             .navigationViewStyle(DefaultNavigationViewStyle())
-            .navigationBarItems(trailing: BotonCarrito)
+            .navigationBarItems(trailing: BotonCarrito.environmentObject(vistamodelo))
             .toolbar {
                 ToolbarItemGroup(
                     placement: .principal) {
@@ -70,18 +73,20 @@ struct ProductosSinLogIn: View {
     }
 }
 
-struct ProductosSinLogIn_Previews: PreviewProvider {
+struct ProductosSinLogin_Previews: PreviewProvider {
     static var previews: some View {
-        ProductosSinLogIn()
+        ProductosSinLogin()
     }
 }
 
 struct ProductoSin: View {
+    @EnvironmentObject var vistamodelo: ViewModel
     var title: String
     var foto: String
     var textColor: Color
     var bgColor: Color
     var precio: String
+    var productoid: String
 
     var body: some View {
         HStack {
@@ -89,19 +94,30 @@ struct ProductoSin: View {
                 image in image
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150)
+                    .frame(width: 120)
             } placeholder: {
                 ProgressView()
             }
+            .background(.white)
+            .cornerRadius(10)
+            Spacer()
 
             VStack {
-                HStack {
-                    Spacer()
-                    Text(title)
-                        .font(.system(.title2, design: .rounded))
-                        .fontWeight(.black)
-                        .foregroundColor(textColor)
-                }
+                Spacer()
+                Text(title)
+                    .font(.system(.title2, design: .rounded))
+                    .fontWeight(.black)
+                    .foregroundColor(textColor)
+                Spacer()
+                    .frame(height: 10)
+                Text("$\(precio)")
+                    .font(.system(.title3, design: .rounded))
+                    .fontWeight(.black)
+                    .foregroundColor(textColor)
+                Spacer()
+                    .frame(height: 10)
+
+
                 Spacer()
             }
             Spacer()
@@ -112,6 +128,7 @@ struct ProductoSin: View {
         .cornerRadius(10)
     }
 }
+
 
 func toInt(s: String?) -> Int {
   var result = 0
