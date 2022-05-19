@@ -36,7 +36,7 @@
 		7F23EB34282F5820000D9AA9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		7F23EB36282F587A000D9AA9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7F23EB382833114B000D9AA9 /* VistaProducto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaProducto.swift; sourceTree = "<group>"; };
-		7F2D1B5F2819FF9A00C323EF /* swift_proyecto_final_apps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_proyecto_final_apps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2D1B5F2819FF9A00C323EF /* SuperStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2D1B622819FF9A00C323EF /* swift_proyecto_final_appsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_proyecto_final_appsApp.swift; sourceTree = "<group>"; };
 		7F2D1B642819FF9A00C323EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F2D1B662819FF9C00C323EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		7F2D1B602819FF9A00C323EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F2D1B5F2819FF9A00C323EF /* swift_proyecto_final_apps.app */,
+				7F2D1B5F2819FF9A00C323EF /* SuperStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 			);
 			name = swift_proyecto_final_apps;
 			productName = swift_proyecto_final_apps;
-			productReference = 7F2D1B5F2819FF9A00C323EF /* swift_proyecto_final_apps.app */;
+			productReference = 7F2D1B5F2819FF9A00C323EF /* SuperStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -312,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swift_proyecto_final_apps/Preview Content\"";
@@ -329,7 +330,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bryanvargas.swift-proyecto-final-apps";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperStore;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,6 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swift_proyecto_final_apps/Preview Content\"";
@@ -358,7 +360,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bryanvargas.swift-proyecto-final-apps";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SuperStore;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
