@@ -10,9 +10,6 @@ import SwiftUI
 struct Carrito: View {
     @EnvironmentObject var vistamodelo: ViewModel
     @Binding var userid: String
-    @State var total = 0
-    @State var precio = 0
-    @State var cantidad = 0
     var body: some View {
         let colors: [Color] = [.orange, .blue, .yellow]
         ScrollView {
