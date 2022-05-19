@@ -26,19 +26,37 @@ struct VistaProducto: View {
             } placeholder: {
                 ProgressView()
             }
+            Spacer()
+                .frame(height: 10)
+            HStack {
+                Spacer()
+                Text("$\(precio)")
+                .font(.system(.title, design: .rounded))
+                    .fontWeight(.black)
+                Spacer()
+            }
 
-            Button {
-                let params: [String: Any] = [
-                    "username": self.userid,
-                    "producto": self.productoid,
-                ]
-                vistamodelo.postAgregarProductoCarrito(parameters: params)
+            Spacer()
+                .frame(height: 10)
+            HStack {
+                Spacer()
+                Button {
+                    let params: [String: Any] = [
+                        "username": self.userid,
+                        "producto": self.productoid,
+                    ]
+                    vistamodelo.postAgregarProductoCarrito(parameters: params)
+                }
+                label: {
+                    Text("Agregar al carrito")
+                }
+                .frame(width: 200)
+                .padding()
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(10)
+                Spacer()
             }
-            label: {
-                Text("Agregar al carrito")
-            }
-            .background(.yellow)
-            .cornerRadius(10)
 
             Spacer()
 

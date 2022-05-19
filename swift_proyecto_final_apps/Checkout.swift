@@ -42,7 +42,7 @@ struct Checkout: View {
                 }
             }.padding(.horizontal)
         }
-        .navigationTitle("Carrito")
+        .navigationTitle("Checkout")
         .onAppear {
             let params: [String: Any] = [
                 "username": self.userid,
