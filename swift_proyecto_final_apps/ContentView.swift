@@ -11,8 +11,8 @@ struct ContentView: View {
     @EnvironmentObject var vistamodelo: ViewModel
     @State var id = UIDevice.current.identifierForVendor!.uuidString
     @State var isLoggedIn: Bool = false
-    @State var user_id = ""
-    @State var email = ""
+    @State var user_id  = ""
+    @State var email    = ""
     @State var password = ""
 
     var body: some View {

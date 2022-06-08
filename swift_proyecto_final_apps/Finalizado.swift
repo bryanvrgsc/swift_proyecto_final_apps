@@ -9,7 +9,19 @@ import SwiftUI
 
 struct Finalizado: View {
     var body: some View {
+      VStack{
+        Spacer()
+        
         Text("Pedido con éxito")
+        .frame(width: 200)
+        .padding()
+        .foregroundColor(.white)
+        .background(.black)
+        .cornerRadius(10)
+        Spacer()
+      }
+
+
     }
 }
 

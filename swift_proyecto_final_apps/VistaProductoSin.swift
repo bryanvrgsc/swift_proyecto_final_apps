@@ -9,12 +9,12 @@ import SwiftUI
 
 struct VistaProductoSin: View {
     @EnvironmentObject var vistamodelo: ViewModel
-    @State var producto = "0"
-    @State var foto = "0"
-    @State var precio = ""
-    @State var cantidad = "0"
+    @State var producto   = "0"
+    @State var foto       = "0"
+    @State var precio     = ""
+    @State var cantidad   = "0"
     @State var productoid = ""
-    @State var userid = ""
+    @State var userid     = ""
 
     @Environment(\.dismiss) var regresa
     var body: some View {

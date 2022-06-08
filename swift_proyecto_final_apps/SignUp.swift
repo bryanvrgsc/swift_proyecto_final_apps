@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SignUp: View {
     @EnvironmentObject var vistamodelo: ViewModel
-    @State var emailregistro = ""
+    @State var emailregistro    = ""
     @State var passwordregistro = ""
-    @State var respuesta = ""
+    @State var respuesta        = ""
     var body: some View {
         VStack {
             Image("logo")
